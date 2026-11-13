@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoopChat - Join the Group Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+
+  <main class="container">
+    
+    <!-- Left Column: App Preview UI -->
+    <section class="preview-panel">
+      
+      <!-- Top Status Row -->
+      <div class="status-pills">
+        <div class="pill pill-lime">
+          <span class="status-dot lime"></span>
+          <span>94K+ ACTIVE ROOMS</span>
+        </div>
+        <div class="pill pill-magenta">
+          <span>⚡ Squad drops 3.. 2.. 1.. 🚀</span>
+        </div>
+      </div>
+
+      <!-- Hero Illustration Banner -->
+      <div class="hero-card">
+        <div class="hero-overlay-top">
+          <span class="glass-badge">🚫 No boring DMs allowed</span>
+        </div>
+        
+        <div class="hero-artwork">
+          <div class="neon-sign sign-1">LMAO 😂</div>
+          <div class="neon-sign sign-2">LOOPCHAT</div>
+          <div class="illustration-placeholder">
+            <p>🎮 Cyber Lounge Hangout</p>
+          </div>
+        </div>
+
+        <div class="hero-overlay-bottom">
+          <span class="violet-pill">🔮 Certified Vibing Only</span>
+        </div>
+      </div>
+
+      <!-- Active Chat Room Card -->
+      <div class="room-card">
+        <div class="room-header">
+          <div class="room-title-group">
+            <div class="room-icon">🍜</div>
+            <div>
+              <h3>The Midnight Ramen Club</h3>
+              <p>Voice &amp; Meme Lounge • 18 inside</p>
+            </div>
+          </div>
+          <div class="avatar-stack">
+            <span class="mini-avatar cyan">K</span>
+            <span class="mini-avatar yellow">R</span>
+            <span class="mini-avatar pink">+9</span>
+          </div>
+        </div>
+
+        <!-- Text Message -->
+        <div class="chat-item">
+          <div class="chat-avatar grey">AX</div>
+          <div class="chat-content">
+            <div class="chat-meta">
+              <span class="username">alex_irl</span>
+              <span class="timestamp">Just now</span>
+            </div>
+            <div class="message-bubble">
+              anyone down to stream the new cyberpunk tournament drop tonight? 🎮
+            </div>
+            <div class="reactions">
+              <span class="reaction-pill active">🔥 14</span>
+              <span class="reaction-pill">💀 8</span>
+              <span class="reaction-pill">💜 23</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio Message -->
+        <div class="chat-item">
+          <div class="chat-avatar lime-bg">CH</div>
+          <div class="chat-content">
+            <div class="chat-meta">
+              <span class="username lime-text">chloe.vibe</span>
+              <span class="timestamp">1m ago</span>
+            </div>
+            <div class="audio-bubble">
+              <button class="play-btn" aria-label="Play voice note">▶</button>
+              <div class="waveform">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span class="audio-time">0:09</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator">
+          <div class="typing-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span>Alex &amp; 3 others are vibing in chat...</span>
+        </div>
+      </div>
+
+      <!-- Bottom Social Proof Banner -->
+      <div class="social-proof">
+        <span class="proof-icon">⚡</span>
+        <p>Over <strong>2.4M group convos</strong> ignited daily by Gen-Z creators, gamers, and campus crews worldwide.</p>
+      </div>
+
+    </section>
+
+    <!-- Right Column: Sign Up Form -->
+    <section class="form-panel">
+      
+      <div class="form-badge">
+        <span>🎉 YOUR SQUAD IS WAITING</span>
+      </div>
+
+      <h1 class="form-headline">
+        Join the group chat.<br>
+        Skip the small talk.
+      </h1>
+
+      <p class="form-subhead">
+        Spawn your digital living room, lock in your @tag, and voice-hang with zero friction.
+      </p>
+
+      <div class="divider">
+        <!-- <span>OR PULL UP WITH DETAILS ⚡</span> -->
+      </div>
+
+      <form class="signup-form">
+        
+        <!-- Display Name -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="display-name">What do friends call you?</label>
+            <span class="label-hint">Live Avatar Tag</span>
+          </div>
+          <div class="input-box">
+            <span class="input-avatar">M</span>
+            <input type="text" id="display-name" value="Maya Chen" placeholder="Enter your name">
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="email">Your prime inbox</label>
+          </div>
+          <div class="input-box">
+            <input type="email" id="email" value="maya@loopchat.gg" placeholder="you@domain.com">
+            <span class="valid-check">✔</span>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="phone">Mobile digits</label>
+            <span class="label-hint">Squad drop alerts &amp; 2FA</span>
+          </div>
+          <div class="phone-row">
+            <div class="input-box country-select">
+              <select aria-label="Country code">
+                <option value="+1">US +1</option>
+                <option value="+44">UK +44</option>
+                <option value="+91">IN +91</option>
+              </select>
+            </div>
+            <div class="input-box phone-input">
+              <input type="tel" id="phone" value="(555) 019-2834" placeholder="(555) 000-0000">
+            </div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="password">Super secret password</label>
+          </div>
+          <div class="input-box">
+            <input type="password" id="password" value="supersecretpassword" placeholder="••••••••••••">
+            <button type="button" class="eye-btn" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <!-- Notification Toggle -->
+        <div class="toggle-box">
+          <div class="toggle-info">
+            <span>🔔 Ping me when my mutuals join the loop 🔔</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Legal -->
+        <p class="legal-note">
+          By joining, you agree to the <a href="#">Vibe Guidelines</a> &amp; <a href="#">Privacy Charter</a>. Zero creep policy strictly enforced.
+        </p>
+
+        <!-- CTA Button -->
+        <button type="submit" class="cta-button">
+          Claim Your Tag &amp; Enter the Loop &rarr;
+        </button>
+
+      </form>
+
+      <!-- Footer -->
+      <footer class="form-footer">
+        <div class="login-link">
+          Already in the loop? <a href='./login.html'>Jump back into chat</a>
+        </div>
+        <div class="security-tags">
+          <span>🔒 End-to-End Encrypted</span>
+          <span>•</span>
+          <span class="verified">🛡️ Verified Vibes</span>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

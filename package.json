@@ -1,0 +1,16 @@
+{
+  "name": "full_stack_gorup_chat_app",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/Sachin007devin/full_stack_group_chat_app.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

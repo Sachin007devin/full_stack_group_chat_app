@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoopChat - Jump Back In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Left Column: Hero & Live Room Showcase -->
+    <section class="hero-section">
+      
+      <!-- Top Status Row -->
+      <div class="top-badges">
+        <div class="pill-badge lime-badge">
+          <span class="pulse-dot"></span>
+          <span>142K ONLINE RIGHT NOW</span>
+        </div>
+        <div class="pill-badge dark-badge">
+          <span class="bolt-icon">⚡</span>
+          <span>DROP INTO THE LOOP</span>
+        </div>
+      </div>
+
+      <!-- Display Headline -->
+      <h1 class="display-headline">
+        THE GROUP<br>
+        CHAT<br>
+        <span class="gradient-text">NEVER<br>SLEEPS.</span>
+      </h1>
+
+      <p class="hero-subtext">
+        Zero algorithmic feed noise. Just high-voltage spatial rooms, reactive voice clips, and non-stop midnight convos.
+      </p>
+
+      <!-- Live Room Card -->
+      <div class="live-room-card">
+        <div class="room-top">
+          <div class="room-identity">
+            <div class="room-avatar">🎮</div>
+            <div>
+              <div class="room-name-row">
+                <h3>Neon Arcade Lounge</h3>
+                <span class="live-tag">LIVE</span>
+              </div>
+              <p class="room-members">
+                <span class="green-dot"></span> 24 squad members inside
+              </p>
+            </div>
+          </div>
+
+          <div class="avatar-group">
+            <span class="user-pic pic-1">A</span>
+            <span class="user-pic pic-2">K</span>
+            <span class="user-pic pic-3">S</span>
+            <span class="user-count">+21</span>
+          </div>
+        </div>
+
+        <!-- Chat Post -->
+        <div class="post-body">
+          <div class="post-header">
+            <div>
+              <span class="handle">@kal.wav</span>
+              <span class="time">2m ago</span>
+            </div>
+            <span class="pin-icon" title="Pinned message">📌</span>
+          </div>
+          <p class="post-text">
+            Watch party starting now! Dropped the synthwave album stems in the audio channel. Turn bass up 🎛️
+          </p>
+        </div>
+
+        <!-- Voice Note Player -->
+        <div class="voice-player">
+          <button class="play-circle" aria-label="Play voice note">▶</button>
+          <div class="voice-meta">
+            <span class="voice-label">Voice note from @sora</span>
+            <div class="waveform-bars">
+              <span class="active"></span><span class="active"></span><span class="active"></span>
+              <span class="active"></span><span class="active"></span><span class="active"></span>
+              <span class="active"></span><span class="active"></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <span class="voice-duration">0:14 / 0:38</span>
+        </div>
+
+        <!-- Reaction Footer -->
+        <div class="room-footer">
+          <div class="reaction-list">
+            <span class="react-chip">🔥 42</span>
+            <span class="react-chip">💀 19</span>
+            <span class="react-chip">👾 31</span>
+            <span class="react-chip">✨ 67</span>
+          </div>
+          <span class="spatial-tag">🎚️ Spatial 3D</span>
+        </div>
+      </div>
+
+      <!-- Feature Pills -->
+      <div class="feature-pills">
+        <div class="feat-pill"><span class="icon-pink">🔒</span> Zero boring feeds</div>
+        <div class="feat-pill"><span class="icon-lime">🎧</span> Spatial audio hangouts</div>
+        <div class="feat-pill"><span class="icon-violet">👥</span> Ephemeral stories</div>
+      </div>
+
+      <!-- Global Stat -->
+      <div class="global-stat">
+        <span class="globe-icon">🌐</span>
+        <p>Over <strong>4.8M</strong> midnight convos and watch parties daily across 180+ countries.</p>
+      </div>
+
+    </section>
+
+    <!-- Right Column: Login Card -->
+    <section class="login-wrapper">
+      <div class="login-card">
+        <div class="top-accent-line"></div>
+
+        <a href="#" class="back-pill">
+          &lsaquo; WELCOME BACK TO THE SQUAD
+        </a>
+
+        <h2 class="login-title">
+          Jump back in.<br>
+          Don't leave them on read.
+        </h2>
+
+        <p class="login-subtitle">
+          Pick up right where your squad left off. Instant sync across all your devices.
+        </p>
+
+        <form class="login-form" >
+          
+          <!-- Identifier Field -->
+          <div class="field-group">
+            <div class="field-labels">
+              <label for="user-handle">Email, or mobile digits</label>
+              <span class="req-badge">Required</span>
+            </div>
+            <div class="input-container">
+              <span class="input-prefix">@</span>
+              <input type="text" id="user-handle" placeholder="maya@loopchat.gg or +91xxxxxxxxx">
+            </div>
+          </div>
+
+          <!-- Passkey Field -->
+          <div class="field-group">
+            <div class="field-labels">
+              <label for="passkey">Your secret passkey</label>
+              <a href='./forgot.html' class="forgot-link">Forgot passkey? Reset in seconds</a>
+            </div>
+            <div class="input-container">
+              <span class="input-prefix">🔑</span>
+              <input type="password" id="passkey" value="••••••••••••" placeholder="Enter passkey">
+              <button type="button" class="toggle-eye" aria-label="Show passkey">👁️</button>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="slide-btn">
+            Slide Into Chat &rarr;
+          </button>
+
+        </form>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <p class="signup-prompt">
+            New to the squad? <a href='./index.html'>Claim your handle &amp; join &rarr;</a>
+          </p>
+          <div class="trust-row">
+            <span>🔒 End-to-End Encrypted</span>
+            <span class="dot-sep">•</span>
+            <span class="tfa-text">🛡️ Instant 2FA Protected</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
