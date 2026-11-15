@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LoopChat - Jump Back In</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./styles/login.css">
 </head>
+
 <body>
 
   <main class="container">
 
     <!-- Left Column: Hero & Live Room Showcase -->
     <section class="hero-section">
-      
+
       <!-- Top Status Row -->
       <div class="top-badges">
         <div class="pill-badge lime-badge">
@@ -36,7 +40,8 @@
       </h1>
 
       <p class="hero-subtext">
-        Zero algorithmic feed noise. Just high-voltage spatial rooms, reactive voice clips, and non-stop midnight convos.
+        Zero algorithmic feed noise. Just high-voltage spatial rooms, reactive voice clips, and non-stop midnight
+        convos.
       </p>
 
       <!-- Live Room Card -->
@@ -137,17 +142,23 @@
           Pick up right where your squad left off. Instant sync across all your devices.
         </p>
 
-        <form class="login-form" >
-          
-          <!-- Identifier Field -->
+        <form class="login-form">
+
+          <!-- Identifier Field with Mode Switcher -->
           <div class="field-group">
             <div class="field-labels">
-              <label for="user-handle">Email, or mobile digits</label>
-              <span class="req-badge">Required</span>
+              <label for="user-handle">Sign in with</label>
+              <!-- Toggle Buttons -->
+              <div class="mode-switch-btns">
+                <button type="button" id="btn-email" class="switch-btn active"
+                  onclick="setLoginMode('email')">Email</button>
+                <button type="button" id="btn-mobile" class="switch-btn" onclick="setLoginMode('mobile')">Mobile
+                  Digits</button>
+              </div>
             </div>
             <div class="input-container">
-              <span class="input-prefix">@</span>
-              <input type="text" id="user-handle" placeholder="maya@loopchat.gg or +91xxxxxxxxx">
+              <span class="input-prefix" id="input-prefix-icon">@</span>
+              <input type="email" id="user-handle" name="userCredential" placeholder="maya@loopchat.gg">
             </div>
           </div>
 
@@ -159,7 +170,7 @@
             </div>
             <div class="input-container">
               <span class="input-prefix">🔑</span>
-              <input type="password" id="passkey" value="••••••••••••" placeholder="Enter passkey">
+              <input type="password" id="passkey" name= "passkey" value="••••••••••••" placeholder="Enter passkey">
               <button type="button" class="toggle-eye" aria-label="Show passkey">👁️</button>
             </div>
           </div>
@@ -189,4 +200,7 @@
   </main>
 
 </body>
+<script src="./js/login.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.21.1/axios.js"></script>
+
 </html>

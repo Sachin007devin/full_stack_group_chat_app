@@ -365,8 +365,8 @@ background-clip: text;
   font-size: 0.72rem;
   font-weight: 600;
   color: var(--text-secondary);
+  
 }
-
 .spatial-tag {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -607,4 +607,38 @@ background-clip: text;
 .tfa-text {
   color: var(--lime-accent);
   font-weight: 600;
+}
+
+/* Mode Switcher (Email / Mobile Digits) */
+.mode-switch-btns {
+  display: inline-flex;
+  background-color: var(--surface-container);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.switch-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.switch-btn:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.switch-btn.active {
+  background-color: var(--lime-accent);
+  color: var(--bg-obsidian);
+  box-shadow: 0 0 10px rgba(195, 244, 0, 0.25);
 }
