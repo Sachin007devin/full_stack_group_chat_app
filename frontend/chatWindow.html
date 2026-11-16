@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoopChat - WhatsApp Dark Neon Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/chatWindow.css">
+</head>
+<body>
+
+  <div class="whatsapp-layout">
+    
+    <!-- LEFT SIDEBAR: Contacts & Chats -->
+    <aside class="sidebar">
+      
+      <!-- User Profile Header -->
+      <div class="sidebar-header">
+        <div class="my-profile">
+          <div class="my-avatar">M</div>
+          <span class="my-name">Maya Chen <span class="status-dot online"></span></span>
+        </div>
+        <div class="sidebar-actions">
+          <button class="icon-btn" title="New Chat">💬</button>
+          <button class="icon-btn" title="Menu">⋮</button>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="sidebar-search">
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="contact-search" placeholder="Search or start new chat">
+        </div>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="filter-chips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="unread">Unread</button>
+        <button class="chip" data-filter="online">Online</button>
+      </div>
+
+      <!-- Contacts List Container -->
+      <div class="contacts-list" id="contacts-container">
+        <!-- Dynamically injected via JS -->
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN: Chat Window -->
+    <main class="chat-main">
+      
+      <!-- Active Chat Header -->
+      <header class="chat-header">
+        <div class="active-contact-info">
+          <div class="active-avatar" id="header-avatar">🎮</div>
+          <div>
+            <h3 id="header-name">Neon Arcade Lounge</h3>
+            <span class="active-status" id="header-status"><span class="green-dot"></span> 24 squad members online</span>
+          </div>
+        </div>
+
+        <div class="chat-header-actions">
+          <div class="header-search-box">
+            <span>🔎</span>
+            <input type="text" id="chat-search" placeholder="Search in chat...">
+          </div>
+          <button class="icon-btn" title="Pinned Messages">📌</button>
+          <button class="icon-btn" title="More Options">⋮</button>
+        </div>
+      </header>
+
+      <!-- Messages Area -->
+      <div class="chat-messages" id="chat-messages-container">
+        <!-- Dynamically injected via JS -->
+      </div>
+
+      <!-- Voice Recording Status Overlay (Hidden by default) -->
+      <div class="recording-banner" id="recording-banner" style="display: none;">
+        <span class="pulse-recording"></span>
+        <span>Recording voice note... <b id="rec-timer">0:00</b></span>
+        <button id="cancel-rec" class="cancel-rec-btn">Cancel</button>
+      </div>
+
+      <!-- Message Composer Footer -->
+      <footer class="chat-footer">
+        <div class="attachment-dropdown" id="attachment-menu" style="display: none;">
+          <button onclick="sendAttachment('photo')">📷 Photo / Image</button>
+          <button onclick="sendAttachment('video')">🎥 Video Clip</button>
+          <button onclick="sendAttachment('audio')">🎵 Voice Note</button>
+        </div>
+
+        <button class="footer-icon-btn" id="attach-toggle" title="Attach">📎</button>
+        <button class="footer-icon-btn" title="Emoji">😊</button>
+
+        <div class="composer-input-wrapper">
+          <input type="text" id="message-input" placeholder="Type a message or drop a voice clip...">
+        </div>
+
+        <button class="footer-icon-btn mic-btn" id="mic-btn" title="Hold to record voice note">🎙️</button>
+        <button class="send-btn" id="send-btn" title="Send message"> ➤ </button>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Media Lightbox Modal -->
+  <div class="media-modal" id="media-modal" style="display: none;">
+    <span class="close-modal" id="close-modal">&times;</span>
+    <div class="modal-content-wrapper" id="modal-content"></div>
+  </div>
+
+  <script src="./js/chatWindow.js"></script>
+</body>
+</html>

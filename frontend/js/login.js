@@ -21,6 +21,8 @@ async function handleFormSubmit(event) {
         localStorage.setItem('token', token)
 
         window.alert(data.message)
+        window.location.href='./chatWindow.html'
+
     } catch (error) {
         window.alert(error)
         throw Error(error)

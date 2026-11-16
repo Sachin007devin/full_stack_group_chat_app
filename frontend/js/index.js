@@ -17,9 +17,13 @@ async function handleFormSubmit(event) {
 
         const {data} = await axios.post(API_URL, payload)
         const token = data.token
+
         localStorage.setItem('token', token)
         form.reset()
+
         window.alert(data.message)
+        window.location.href='./chatWindow.html'
+
     } catch (error) {
         window.alert(error)
         throw Error(error)
