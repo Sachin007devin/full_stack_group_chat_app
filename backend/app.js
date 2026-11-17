@@ -22,11 +22,13 @@ const db = require('./service/db.connection')
 
 //models
 require('./models/user.model')
-
+require('./models/message.model')
 //routes
 const userRoutes = require('./routes/user.routes')
+const messageRoutes = require('./routes/message.routes')
 
 app.use('/user',userRoutes)
+app.use('/api/messages',messageRoutes)
 
 db.sync({alter:true}).then(()=>{
     app.listen(process.env.PORT,()=>console.log('server running on port',process.env.PORT)) 

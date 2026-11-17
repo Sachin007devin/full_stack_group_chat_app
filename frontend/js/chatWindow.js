@@ -287,6 +287,84 @@ function openMediaModal(url, type) {
 
 closeModal.onclick = () => { mediaModal.style.display = 'none'; };
 
+
+// fecthing messages
+
+const LOGGED_IN_USER_ID = 1; // Login ke baad token/localStorage se milega
+let oldestMessageId = null;
+let isLoadingMore = false;
+let hasMoreMessages = true;
+
+// 1. Load Initial Chat
+async function loadInitialChat(receiverId) {
+  oldestMessageId = null;
+  hasMoreMessages = true;
+  chatMessagesContainer.innerHTML = '';
+
+  const { data } = await axios.get(`/api/messages/${receiverId}?limit=10`, {
+    headers: { 'Authorization': `${localStorage.getItem('token')}` }
+  });
+
+  if (data.success && data.data.chronologicalMessages.length > 0) {
+    const msgs = data.data.chronologicalMessages;
+    oldestMessageId = msgs[0].id;
+    hasMoreMessages = data.data.hasMore;
+    renderFetchedMessages(msgs, false);
+    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+  }
+}
+
+// 2. Infinite Scroll Up
+chatMessagesContainer.addEventListener('scroll', async () => {
+  if (chatMessagesContainer.scrollTop === 0 && !isLoadingMore && hasMoreMessages) {
+    isLoadingMore = true;
+    const previousScrollHeight = chatMessagesContainer.scrollHeight;
+
+    const { data } = await axios.get(`/api/messages/${activeContactId}?limit=10&beforeId=${oldestMessageId}`, {
+      headers: { 'Authorization': `${localStorage.getItem('token')}` }
+    });
+
+    if (data.success && data.data.chronologicalMessages.length > 0) {
+      const msgs = data.data.chronologicalMessages;
+      oldestMessageId = msgs[0].id;
+      hasMoreMessages = data.data.hasMore;
+      renderFetchedMessages(msgs, true);
+
+      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight - previousScrollHeight;
+    }
+    isLoadingMore = false;
+  }
+});
+
+// 3. Left/Right Alignment Logic
+function renderFetchedMessages(messages, prepend = false) {
+  const fragment = document.createDocumentFragment();
+
+  messages.forEach(msg => {
+    const isOutgoing = msg.senderId === LOGGED_IN_USER_ID; // Right side agar sender == logged-in user
+    const row = document.createElement('div');
+    row.className = `message-row ${isOutgoing ? 'outgoing' : 'incoming'}`;
+    row.innerHTML = `
+      <div class="message-bubble">
+        <p class="msg-text">${msg.content}</p>
+        <div class="msg-meta">
+          <span>${new Date(msg.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+          ${isOutgoing ? `<span class="ticks">${msg.isRead ? '✓✓' : '✓'}</span>` : ''}
+        </div>
+      </div>
+    `;
+    fragment.appendChild(row);
+  });
+
+  if (prepend) {
+    chatMessagesContainer.prepend(fragment);
+  } else {
+    chatMessagesContainer.appendChild(fragment);
+  }
+}
+
+
+
 // Initial Load
 renderContacts();
 renderMessages();

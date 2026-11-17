@@ -17,7 +17,7 @@ const signInUser = async (data) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10)
-    await userModel.create({
+    const user = await userModel.create({
         Username,
         Email,
         phone,
@@ -25,7 +25,7 @@ const signInUser = async (data) => {
         countryPin
     })
 
-    const token = jwt.sign({ Username, Email, phone }, process.env.SECRET_KEY)
+    const token = jwt.sign({ id: user.id, Username, Email, phone }, process.env.SECRET_KEY)
     const responseData = { Username, Email, phone }
     return { token, responseData }
 }
@@ -33,8 +33,8 @@ const signInUser = async (data) => {
 const getUserLoggedIn = async (credentials) => {
     const { emailOrPhone, password } = credentials
 
-    const isUserExist = typeof emailOrPhone === 'string' 
-        ? await userModel.findOne({ where: { Email: emailOrPhone } }) 
+    const isUserExist = typeof emailOrPhone === 'string'
+        ? await userModel.findOne({ where: { Email: emailOrPhone } })
         : await userModel.findOne({ where: { phone: emailOrPhone } })
 
     if (!isUserExist) {
@@ -53,7 +53,7 @@ const getUserLoggedIn = async (credentials) => {
     }
 
     const token = jwt.sign(
-        { Username: isUserExist.Username, Email: isUserExist.Email, phone: isUserExist.phone }, 
+        { id: isUserExist.id, Username: isUserExist.Username, Email: isUserExist.Email, phone: isUserExist.phone },
         process.env.SECRET_KEY
     )
 

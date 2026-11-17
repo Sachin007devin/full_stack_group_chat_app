@@ -16,7 +16,7 @@ async function registerUser(req, res) {
         const { token, responseData } = await signInUser({ Username, Email, phone, password, countryPin })
 
         return sendResponse(res, {
-            statusCode: 200,
+            statusCode: 201,
             message: 'User registered successfully',
             data: responseData,
             token
